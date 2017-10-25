@@ -18,6 +18,10 @@ export const actions = {
     const itemPromises = tenIds.map(id => axios.get(`item/${id}`));
     const itemResponses = await Promise.all(itemPromises);
     const items = itemResponses.map(res => res.data);
-    commit("setItems", items);
+    const convertedItems = items.map(
+      i => (i.url ? i : Object.assign({}, i, { url: "http://google.com" }))
+    );
+    // console.log(convertedItems);
+    commit("setItems", convertedItems);
   }
 };
