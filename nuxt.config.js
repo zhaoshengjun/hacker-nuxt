@@ -24,6 +24,9 @@ module.exports = {
     "./assets/main.css"
   ],
   plugins: ["./plugins/filter"],
+  router: {
+    linkActiveClass: "nuxt-link-exact-active"
+  },
   build: {
     vendor: ["axios"]
     //   /*
