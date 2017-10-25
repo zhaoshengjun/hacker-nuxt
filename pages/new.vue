@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Top</h1>
+    <h1>New</h1>
     <Items></Items>
   </div>
 </template>
@@ -10,7 +10,7 @@ import Items from "../components/Item.vue";
 export default {
   components: { Items },
   async fetch({ store }) {
-    await store.dispatch("LOAD_ITEMS", "topstories");
+    await store.dispatch("LOAD_ITEMS", "newstories");
   }
 };
 </script>
